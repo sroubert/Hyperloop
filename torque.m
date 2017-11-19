@@ -11,7 +11,7 @@ I = (1/12)*mass*(w^2 + l^2);
 
 alpha = 2*maxAngle./timeResponse^2;
 
-torqueOutput = I*alpha
+torqueOutput = I*alpha;
 
 %assuming equal distance from COM
 
