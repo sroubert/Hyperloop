@@ -1,5 +1,9 @@
-maxAngle = 0.2*(pi/180); %rad
-timeResponse =0.1 ; %s
+function [force, torque] = calcTorqueAndForce(angle,timeResponse)
+%this function calculates the forces and torques necessary to bring the pod
+%back to zero deviance from 
+
+
+maxAngles = linspace(0.01,angle)*(pi/180); %rad
 
 %geometry
 w = 24*(0.0254);  %inches to meters
@@ -9,12 +13,12 @@ mass = 323*(0.453592);  %lbs to kg
 
 I = (1/12)*mass*(w^2 + l^2);
 
-alpha = 2*maxAngle/timeResponse^2;
+alpha = 2*maxAngles./timeResponse^2;
 
-torqueOutput = I*alpha
+torque = I*alpha;
 
 %assuming equal distance from COM
 
 distFromCOM = 0.60325; %meters
 
-F = torqueOutput/distFromCOM
+force = torqueOutput./distFromCOM;

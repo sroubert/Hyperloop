@@ -1,3 +1,5 @@
+
+
 maxAngle = linspace(0.01,0.2)*(pi/180); %rad
 timeResponse =0.1 ; %s
 
