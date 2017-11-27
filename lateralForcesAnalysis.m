@@ -53,7 +53,7 @@ ylabel('Moment (N)')
 %the following is used to calculate the forces and torques necessary to
 %rotate the pod a certain amount of degress (variable called angle) in a
 %certain of time (variable timeResponse)
-angle = 0.2; %degrees
+angle = 1; %degrees
 timeResponse = 0.1; %seconds
 [force, torque,allAngles] = calcTorqueAndForce(angle,timeResponse);
 
